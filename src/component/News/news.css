@@ -1,0 +1,14 @@
+body {
+    background-color: grey;
+}
+
+.card {
+    background-color: black;
+    margin-inline-end: ;
+    box-shadow: inset;
+}
+
+.img {
+    height: 5cm;
+    width: 100%;
+}
