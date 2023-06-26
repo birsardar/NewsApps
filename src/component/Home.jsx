@@ -12,20 +12,18 @@ export default function News(props) {
 
   const baseURL =
     "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=5d42f73ae7c94aca9b5dbabdfae7187b";
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(baseURL);
-        // console.log(response.data.articles);
+    axios
+      .get(baseURL)
+      .then((response) => {
         setData(response.data.articles);
         setLoading(false);
-      } catch (error) {
-        // console.log(error);
+      })
+      .catch((error) => {
+        console.log(error);
         setLoading(false);
-      }
-    };
-
-    fetchData();
+      });
   }, [props.category]);
 
   // Get current items based on pagination
