@@ -8,7 +8,7 @@ export default function News(props) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(15);
+  const itemsPerPage = 15;
 
   const baseURL =
     "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=5d42f73ae7c94aca9b5dbabdfae7187b";
@@ -16,11 +16,11 @@ export default function News(props) {
     const fetchData = async () => {
       try {
         const response = await axios.get(baseURL);
-        console.log(response.data.articles);
+        // console.log(response.data.articles);
         setData(response.data.articles);
         setLoading(false);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
         setLoading(false);
       }
     };
