@@ -34,6 +34,7 @@ export default function News(props) {
 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <div>
@@ -72,6 +73,8 @@ export default function News(props) {
                   >
                     <button
                       className="page-link"
+                      disabled={currentPage === 1 && index === 0}
+                      style={{ backgroundColor: "black", color: "whitesmoke" }}
                       onClick={() => paginate(index + 1)}
                       reset
                     >

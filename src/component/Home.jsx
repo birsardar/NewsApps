@@ -68,6 +68,8 @@ export default function News(props) {
                   >
                     <button
                       className="page-link"
+                      style={{ backgroundColor: "black", color: "whitesmoke" }}
+                      disabled={currentPage === 1 && index === 0}
                       onClick={() => paginate(index + 1)}
                     >
                       {index + 1}

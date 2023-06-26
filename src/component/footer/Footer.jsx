@@ -17,8 +17,7 @@ export default function Footer() {
           <div className="location">
             <FaHome size={20} style={{ color: "#fff", marginRight: "2rem" }} />
             <div>
-              <p>Biratnager-19 </p>
-              <p>Nepal</p>
+              <p>Biratnagar, Nepal</p>
             </div>
           </div>
           <div className="phone">
@@ -27,7 +26,7 @@ export default function Footer() {
                 size={20}
                 style={{ color: "#fff", marginRight: "2rem" }}
               />
-              9817310327
+              9812345678
             </h4>
           </div>
           <div className="email">
@@ -36,17 +35,18 @@ export default function Footer() {
                 size={20}
                 style={{ color: "#fff", marginRight: "2rem" }}
               />
-              birsardar@gamil.com
+              admin@admin.com
             </h4>
           </div>
         </div>
         <div className="right">
           <h4>About Company</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-            iusto, reprehenderit aliquid cum minima unde doloremque numquam eum
-            doloribus obcaecati fugit inventore corrupti illum quidem molestiae
-            aliquam rerum suscipit quam?
+            Our intuitive interface allows you to personalize your news feed,
+            tailoring it to your interests and preferences. Explore a wide range
+            of categories and topics, and discover new perspectives from trusted
+            sources around the world. Stay ahead of the curve with real-time
+            notifications and trending stories, ensuring you never miss a beat.
           </p>
           <div className="social">
             <FaFacebook

@@ -14,7 +14,7 @@ export default class Navbar extends Component {
               className="navbar-toggler"
               type="button"
               data-toggle="collapse"
-              data-target="/navbarSupportedContent"
+              data-target="#navbarSupportedContent" // Updated data-target value
               aria-controls="navbarSupportedContent"
               aria-expanded="false"
               aria-label="Toggle navigation"
@@ -48,9 +48,9 @@ export default class Navbar extends Component {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-light" href="/">
+                  <Link className="nav-link text-light" to="/about">
                     About
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

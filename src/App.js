@@ -4,6 +4,7 @@ import Navbar from "./component/Navbar";
 import News from "./component/News/News";
 import Footer from "./component/footer/Footer";
 import Home from "./component/Home";
+import About from "./component/about/About";
 export default function App() {
   return (
     <Router>
@@ -17,7 +18,7 @@ export default function App() {
             element={<News category="entertainment" />}
           />
           <Route path="/business" element={<News category="business" />} />
-          {/* Add more routes here */}
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </div>
