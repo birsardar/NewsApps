@@ -4,18 +4,17 @@ import NewsItem from "./NewsItem";
 import Spinner from "../Spinner";
 
 export default function News(props) {
-  // console.log(props.category);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(9);
+  const [itemsPerPage] = useState(9); // Removed the unused variable
 
   const baseURL = `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=5d42f73ae7c94aca9b5dbabdfae7187b`;
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(baseURL);
-        console.log(response.data.articles);
         setData(response.data.articles);
         setLoading(false);
       } catch (error) {
@@ -25,7 +24,7 @@ export default function News(props) {
     };
 
     fetchData();
-  }, [props.category]);
+  }, [props.category, baseURL]); // Include baseURL in the dependency array
 
   // Get current items based on pagination
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -34,12 +33,9 @@ export default function News(props) {
 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <div>
-      {/* Pagination Slider */}
-      {/* Scroll Slider */}
       <div className="container my-3" style={{ minHeight: "400px" }}>
         {loading ? (
           <Spinner />
@@ -76,7 +72,6 @@ export default function News(props) {
                       disabled={currentPage === 1 && index === 0}
                       style={{ backgroundColor: "black", color: "whitesmoke" }}
                       onClick={() => paginate(index + 1)}
-                      reset
                     >
                       {index + 1}
                     </button>
