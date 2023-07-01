@@ -10,8 +10,10 @@ export default function News(props) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15;
 
-  const baseURL =
-    "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=5d42f73ae7c94aca9b5dbabdfae7187b";
+  // Replace "YOUR_API_KEY" with your actual NewsAPI API key
+  const apiKey = "5d42f73ae7c94aca9b5dbabdfae7187b";
+  const baseURL = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${apiKey}`;
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,7 +28,7 @@ export default function News(props) {
     };
 
     fetchData();
-  }, [props.category]);
+  });
 
   // Get current items based on pagination
   const indexOfLastItem = currentPage * itemsPerPage;
